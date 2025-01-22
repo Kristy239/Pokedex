@@ -1,15 +1,15 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Pokemons from "./components/Pokemons";
+import Aside from "./components/Aside";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <h1 className="text-2xl font bold"> Pokedex</h1>
-    </>
-  )
+    <section className="bg-[#F6F8FC]">
+      <main className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr-350px] h-screen font-outfit">
+        <Pokemons />
+        <Aside />
+      </main>
+    </section>
+  );
 }
 
-export default App
+export default App;
