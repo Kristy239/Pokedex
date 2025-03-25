@@ -2,12 +2,13 @@ import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 import { IconSearch } from "@tabler/icons-react";
+import PokemonList from "./PokemonList";
 
 const Pokemons = () => {
     const [allPokemons, setAllPokemons] = useState([]);
 
     useEffect(() =>{
-        axios.get("https://pokeapi.co/api/v2/pokemon?limit=898")
+        axios.get("https://pokeapi.co/api/v2/pokemon?limit=50")
             .then(({data}) => setAllPokemons(data.results))
             .catch((err) => console.log(err))
     }, [])
@@ -26,6 +27,7 @@ const Pokemons = () => {
                 </button>
             </div>
         </form>
+        <PokemonList pokemons={allPokemons} />
     </section>
     );
 };
